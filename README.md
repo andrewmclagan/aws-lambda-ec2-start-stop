@@ -12,7 +12,7 @@ Originally forked from [SamVerschueren/aws-lambda-stop-server](https://github.co
 
 ## Usage
 
-Download the [zip](https://github.com/andrewmclagan/aws-lambda-ec2-start-stop/releases) file and deploy it as a lambda function.
+Download the `/dist/build.zip` file from the latest release and deploy it as a lambda function (use master at your own risk).
 
 Lambda settings:
 
