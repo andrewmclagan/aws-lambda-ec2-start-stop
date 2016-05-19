@@ -1,4 +1,4 @@
-# AWS EC2 - Lambda Start / Stop [![Build Status](https://travis-ci.org/andrewmclagan/aws-lambda-ec2-start-stop.svg?branch=master)](https://travis-ci.org/SamVerschueren/aws-lambda-stop-server)
+# AWS EC2 - Lambda Start / Stop [![Build Status](https://travis-ci.org/andrewmclagan/aws-lambda-ec2-start-stop.svg?branch=master)](https://travis-ci.org/https://travis-ci.org/andrewmclagan/aws-lambda-ec2-start-stop)
 
 > AWS Lambda function that will stop or stop EC2 instances that have a tag with the key start-group or stop-group and the value the name of the lambda function.
 

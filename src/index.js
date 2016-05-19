@@ -67,12 +67,16 @@ export function discoverRegionInstances(tag, region, status) {
 export function stopTaggedInstances(event, context) {
 	const tag = { name: 'stop-group', value: context.functionName };
 
-	discoverAvailableRegions()
-		.then(regions => regions.forEach(region => discoverRegionInstances(tag, region, 16).then(instances => {
-			if (instances.length) {
-				(new AWS.EC2({ region })).stopInstances({ InstanceIds: instances }, () => {});
-			}
-		})));
+	return new Promise(resolve => {
+		discoverAvailableRegions()
+			.then(regions => regions.forEach(region => discoverRegionInstances(tag, region, 16).then(instances => {
+				if (instances.length) {
+					(new AWS.EC2({ region })).stopInstances({ InstanceIds: instances }, (error, response) => {
+						resolve(error || response);
+					});
+				}
+			})));
+	});
 }
 
 /**
@@ -84,11 +88,15 @@ export function stopTaggedInstances(event, context) {
 export function startTaggedInstances(event, context) {
 	const tag = { name: 'start-group', value: context.functionName };
 
-	discoverAvailableRegions()
-		.then(regions => regions.forEach(region => discoverRegionInstances(tag, region, 80).then(instances => {
-			if (instances.length) {
-				(new AWS.EC2({ region })).startInstances({ InstanceIds: instances }, () => {});
-			}
-		})));
+	return new Promise(resolve => {
+		discoverAvailableRegions()
+			.then(regions => regions.forEach(region => discoverRegionInstances(tag, region, 80).then(instances => {
+				if (instances.length) {
+					(new AWS.EC2({ region })).startInstances({ InstanceIds: instances }, (error, response) => {
+						resolve(error || response);
+					});
+				}
+			})));
+	});
 }
 
