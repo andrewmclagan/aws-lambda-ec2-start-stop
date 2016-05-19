@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "ava",
-    "build": "gulp build"
+    "build": "ava && gulp build"
   },
   "keywords": [
     "aws",

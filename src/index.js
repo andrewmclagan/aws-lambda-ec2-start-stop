@@ -72,7 +72,7 @@ export function stopTaggedInstances(event, context) {
 			.then(regions => regions.forEach(region => discoverRegionInstances(tag, region, 16).then(instances => {
 				if (instances.length) {
 					(new AWS.EC2({ region })).stopInstances({ InstanceIds: instances }, (error, response) => {
-						resolve(error || response);
+						resolve(console.log(error || response));
 					});
 				}
 			})));
@@ -93,7 +93,7 @@ export function startTaggedInstances(event, context) {
 			.then(regions => regions.forEach(region => discoverRegionInstances(tag, region, 80).then(instances => {
 				if (instances.length) {
 					(new AWS.EC2({ region })).startInstances({ InstanceIds: instances }, (error, response) => {
-						resolve(error || response);
+						resolve(console.log(error || response));
 					});
 				}
 			})));
