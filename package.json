@@ -1,0 +1,46 @@
+{
+  "name": "lambda-stop-start-server",
+  "version": "0.1.2",
+  "description": "AWS Lambda function that stops/starts servers.",
+  "license": "MIT",
+  "author": {
+    "name": "Andrew McLagan",
+    "email": "andrew@ethicaljobs.com.au"
+  },
+  "scripts": {
+    "test": "ava",
+    "build": "gulp build"
+  },
+  "keywords": [
+    "aws",
+    "ec2",
+    "lambda",
+    "stop",
+    "server",
+    "cronjob",
+    "schedule"
+  ],
+  "devDependencies": {
+    "ava": "^0.14.0",
+    "babel": "^6.5.2",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "del": "^2.2.0",
+    "fs": "0.0.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-install": "^0.6.0",
+    "gulp-remove-empty-lines": "0.0.3",
+    "gulp-strip-comments": "^2.4.3",
+    "gulp-zip": "^3.2.0",
+    "path": "^0.12.7",
+    "sinon": "^1.17.4"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.3.13"
+  },
+  "ava": {
+    "require": ["babel-register"],
+    "babel": "inherit"
+  }
+}
