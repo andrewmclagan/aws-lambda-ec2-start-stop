@@ -1,4 +1,4 @@
-# AWS EC2 - Lambda Start / Stop [![Build Status](https://travis-ci.org/andrewmclagan/aws-lambda-ec2-start-stop.svg?branch=master)](https://travis-ci.org/https://travis-ci.org/andrewmclagan/aws-lambda-ec2-start-stop)
+# AWS EC2 - Lambda Start / Stop [![Build Status](https://travis-ci.org/andrewmclagan/aws-lambda-ec2-start-stop.svg?branch=master)](https://travis-ci.org/andrewmclagan/aws-lambda-ec2-start-stop)
 
 > AWS Lambda function that will stop or stop EC2 instances that have a tag with the key start-group or stop-group and the value the name of the lambda function.
 
@@ -32,7 +32,7 @@ For instance, if you named your lambda function `week-day-startup`, make sure yo
 
 ### IAM Role
 
-Make sure your lambda function is able to describe and stop instances.
+Make sure your lambda function is able to describe, start, and stop instances.
 
 ```json
 {
@@ -42,9 +42,10 @@ Make sure your lambda function is able to describe and stop instances.
             "Sid": "MyStatementId",
             "Effect": "Allow",
             "Action": [
-            	"ec2:DescribeRegions",
+                "ec2:DescribeRegions",
                 "ec2:DescribeInstances",
-                "ec2:StopInstances"
+                "ec2:StopInstances",
+                "ec2:StartInstances"
             ],
             "Resource": [
                 "*"
