@@ -32,7 +32,7 @@ For instance, if you named your lambda function `week-day-startup`, make sure yo
 
 ### IAM Role
 
-Make sure your lambda function is able to describe and stop instances.
+Make sure your lambda function is able to describe, start, and stop instances.
 
 ```json
 {
@@ -42,9 +42,10 @@ Make sure your lambda function is able to describe and stop instances.
             "Sid": "MyStatementId",
             "Effect": "Allow",
             "Action": [
-            	"ec2:DescribeRegions",
+                "ec2:DescribeRegions",
                 "ec2:DescribeInstances",
-                "ec2:StopInstances"
+                "ec2:StopInstances",
+                "ec2:StartInstances"
             ],
             "Resource": [
                 "*"
